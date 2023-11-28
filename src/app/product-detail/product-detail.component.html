@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+  <div class="card col-md-5">
+      <img class="card-img-top" src="../assets/images/{{product.image}}" alt="{{product.name}}" style="width:85%; align-self: center;">
+      <div class="card-body">  
+        <h5 class="card-title">{{product.name}}</h5>
+        <div class="card-text">
+          <p>Category : {{product.category}} </p>
+          <p>Unit price : {{product.unitPrice}}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-info">Return to Products</button> 
+      </div>
+  </div>
+  <div class="form-group col-md-7 row">
+    <div>
+      <h5 class="">Comments</h5>
+      <p *ngFor="let comment of product.comments">
+        {{comment.comment}}<br/>
+        {{comment.rating}} Stars <br/>
+        **** {{comment.date|date:"EEEE dd-MMMM-YYYY"}} ****
+      
+     </p>
+    </div>
+    <div class="">
+      <span>Your Comment</span>
+      <textarea  style="width:90%;"  [(ngModel)]="comment.comment"></textarea>
+    </div>
+    <div class="">
+      <span>Your Classification </span>
+      <input type="range" min="0" max="5" [(ngModel)]="comment.rating"/> 
+    </div>
+      <button class="btn btn-secondary">Add Comment</button>
+  </div>
+  </div>      
+  </div>
+  

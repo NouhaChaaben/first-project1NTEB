@@ -1,0 +1,53 @@
+<div class="container">
+<div class="row" *ngIf="products">
+<div class="col-md-3 col-sm-6" *ngFor="let p of products let index=index">
+  <div class="card">
+    <img class="card-img-top" src="../assets/images/{{p.image}}" alt="" style="width:85%; align-self: center;">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">
+        Category : {{p.category}}
+       <br>
+        Unit price : {{p.unitPrice}}
+      </p>
+    </div>             
+    <button  class="card-footer" [routerLink]="['/productdetail',p.reference]">Details</button>
+  </div>
+</div>
+</div>
+<p *ngIf="!products"> le tableau des produits est vide</p>
+</div>
+
+<!--div class="container form-group">
+    <h3>List of Products</h3>
+    <h3>{{datejour| date: "EEEE dd/MM/yyyy" }}</h3>
+    <table class="table table-primary table-bordered">
+        <tr>
+          <th>Reference</th>
+          <th>Name</th>
+          <th>Qty in stock</th>
+          <th>Unit price</th>
+          <th>Ordered Qty</th>
+          <th>total</th>
+        </tr>
+        <tr *ngFor="let p of products let index=index">
+            <td>{{p.reference}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.stockQte}}</td>
+            <td>{{p.unitPrice}}</td>
+            <td><input type="number" [(ngModel)]="qte[index]"><button class="btn" (click)="addCommand (index) " *ngIf="p.stockQte>=qte[index]">Add</button></td>
+            <td >{{total[index]}}</td>
+        </tr>
+        
+    </table>
+    <button class="btn btn-danger" (click)="order()">Order</button>
+      <div class="container">
+          <h3>Confirmed command</h3>
+          <h5>The overall Total is {{finalTotal}}</h5>
+      </div>
+    
+   
+</div-->
+<!--button class="display-3" (click)="modifier()">cliquer</button>
+    <div class="display-3" [ngStyle]="{'color':color}">{{message}}</div>
+    <input type="color" [(ngModel)] ="color"/-->
